@@ -48,7 +48,8 @@ public class PlantacaoManager {
                     
                 } else {
                 	PlantacaoAnual plantAnual = new PlantacaoAnual(tipoSolo, tamanhoTerreno, tipoAlimento,dataPlantio);
-                    plantacoesAnuais.add(plantAnual);
+                	
+                    plantAnual.adicionaPlantacaoAnual(plantAnual);
                     plantacoes.addAll(plantacoesAnuais);
                     System.out.println("Plantação cadastrada com sucesso!\n");
 
@@ -142,7 +143,7 @@ public class PlantacaoManager {
             	for (int j  = 0; j < plantacoesAnuais.size(); j++) {
             	
                 PlantacaoAnual plantacao = plantacoesAnuais.get(j);
-                System.out.println("Plantação#" + (j + 1));
+                System.out.println("Plantação #" + (j + 1));
                 System.out.println("Tipo de solo: " + plantacao.getTipoSolo());
                 System.out.println("Tamanho do terreno: " + plantacao.getTamanhoTerreno() + " metros quadrados");
                 System.out.println("Tipo de alimento: " + plantacao.getTipoAlimento());
