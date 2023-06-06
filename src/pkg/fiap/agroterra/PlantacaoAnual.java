@@ -3,8 +3,14 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class PlantacaoAnual extends Plantacao {
+<<<<<<< HEAD
 	
 	String tipoSolo;
+=======
+	private String tipoSolo;
+    private double tamanhoTerreno;
+    private String tipoAlimento;
+>>>>>>> parent of 694d575 (Alterações parte 2)
 	LocalDate dataPlantio;
 	ArrayList<PlantacaoAnual> plantAnual;
     
@@ -16,7 +22,13 @@ public class PlantacaoAnual extends Plantacao {
 		super(tipoSolo, tamanhoTerreno, tipoAlimento);
 		
 		this.dataPlantio = dataPlantio;
+<<<<<<< HEAD
 		plantAnual = new ArrayList<>();
+=======
+		//Plantacao plantacao = new Plantacao ( tipoSolo,  tamanhoTerreno,  tipoAlimento);
+
+
+>>>>>>> parent of 694d575 (Alterações parte 2)
 	}
 
     

@@ -73,6 +73,7 @@ public class PlantacaoManager {
             System.out.println("Plantação cadastrada com sucesso!\n");
 
         	}
+
     }
 	
 	public void tirarDuvidas(Scanner scanner) {
