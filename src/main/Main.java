@@ -27,13 +27,14 @@ public class Main {
                     plantacaoManager.tirarDuvidas(scanner);
                     break;
                 case 3:
-                    plantacaoManager.exibirPlantacoesCadastradas();
+                    plantacaoManager.exibirPlantacoesAnuais();
+                    plantacaoManager.exibirPlantacoesPerenes();
                     break;
                 case 4:
                 	semente.manejamentoSementes(scanner);
-                	
+                	break;
                 case 0:
-                    System.out.println("Saindo do programa...");
+                	System.out.println("Saindo do programa...");
                     scanner.close();
                     break;
                 default:
@@ -47,6 +48,7 @@ public class Main {
         System.out.println("1 - Cadastrar plantação");
         System.out.println("2 - Tirar dúvidas");
         System.out.println("3 - Ver plantações cadastradas");
+        System.out.println("4 - Manejamento de Sementes");
         System.out.println("0 - Sair");
         System.out.print("Escolha uma opção: ");
 

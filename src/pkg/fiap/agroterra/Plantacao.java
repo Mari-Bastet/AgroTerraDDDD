@@ -39,7 +39,7 @@ public class Plantacao {
     public String melhorEpocaColheita() {
         return "Possuo um terreno " + tipoSolo +
                 ", planto " + tipoAlimento + " e tenho " + tamanhoTerreno +
-                " metros, é a melhor opção para cultivo?";
+                " metros, é a melhor época para colheita?";
     }
 
     

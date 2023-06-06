@@ -63,6 +63,7 @@ public class PlantacaoManager {
         else {
         	System.out.println("\n Planta precisa de poda? (Sim/Não/Não sei dizer) ");
         	String precisaPoda = scanner.next();
+        	scanner.nextLine();
      
         	PlantacaoPerene plantPerene = new PlantacaoPerene(tipoSolo, tamanhoTerreno, tipoAlimento,precisaPoda);
 
@@ -75,23 +76,33 @@ public class PlantacaoManager {
 	
 	public void tirarDuvidas(Scanner scanner) {
         System.out.println("===== DÚVIDAS =====");
-        System.out.println("Sobre qual plantação você deseja tirar dúvidas?");
-
+        System.out.println("Qual o tipo da plantação que deseja tirar dúvidas? : [1] Anual [2] Perene ");
+        int tipoPlantacao = scanner.nextInt();
+        
         String pergunta; 
         String respostaGpt;
         
-        if (plantacoes.isEmpty()) {
+       /* if (plantacoes.isEmpty()) {
             System.out.println("Nenhuma plantação cadastrada.\n");
             return;
-        }
+        }*/
         
-        exibirPlantacoesCadastradas();
+        if (tipoPlantacao == 1) {
+        	exibirPlantacoesAnuais();
+        }
+        else {
+        	exibirPlantacoesPerenes();
+        } ;
 
         System.out.print("Digite o número da plantação: ");
         int numeroPlantacao = scanner.nextInt();
         scanner.nextLine(); // Limpar o buffer do scanner
 
-        if (numeroPlantacao < 1 || numeroPlantacao > plantacoes.size()) {
+        if (numeroPlantacao < 1 || (numeroPlantacao > plantacoesAnuais.size() && tipoPlantacao == 1)){
+            System.out.println("Número de plantação inválido.\n");
+            return;
+        }
+        else if (numeroPlantacao < 1 || (numeroPlantacao > plantacoesPerenes.size() && tipoPlantacao == 2)) {
             System.out.println("Número de plantação inválido.\n");
             return;
         }
@@ -131,12 +142,34 @@ public class PlantacaoManager {
 
     }
 	
-	public void exibirPlantacoesCadastradas() {
-		
-        System.out.println("===== PLANTAÇÕES CADASTRADAS =====");
-        if (plantacoes.isEmpty()) {
+	public void exibirPlantacoesPerenes() {
+		if (plantacoesPerenes.isEmpty()) {
             System.out.println("Nenhuma plantação cadastrada.\n");
-        } else {
+		} 
+		
+		else {
+            	
+            System.out.println("<-+-+-+-+- Plantações Perenes -+-+-+-> \n");
+        	for (int k  = 0; k < plantacoesPerenes.size(); k++) {
+            	
+                PlantacaoPerene plantacao = plantacoesPerenes.get(k);
+                System.out.println("Plantação #" + (k + 1));
+                System.out.println("Tipo de solo: " + plantacao.getTipoSolo());
+                System.out.println("Tamanho do terreno: " + plantacao.getTamanhoTerreno() + " metros quadrados");
+                System.out.println("Tipo de alimento: " + plantacao.getTipoAlimento());
+                System.out.println("Necessita de poda:" +  plantacao.getPrecisaPoda());
+        		}
+        	}
+		}
+	
+	
+	public void exibirPlantacoesAnuais() {
+		
+        if (plantacoesAnuais.isEmpty()) {
+            System.out.println("Nenhuma plantação cadastrada.\n");
+        } 
+        
+        else {
         		System.out.println("<-+-+-+-+- Plantações Anuais -+-+-+-> \n");
             	for (int j  = 0; j < plantacoesAnuais.size(); j++) {
             	
@@ -145,21 +178,11 @@ public class PlantacaoManager {
                 System.out.println("Tipo de solo: " + plantacao.getTipoSolo());
                 System.out.println("Tamanho do terreno: " + plantacao.getTamanhoTerreno() + " metros quadrados");
                 System.out.println("Tipo de alimento: " + plantacao.getTipoAlimento());
-                System.out.println("Data plantio Recente:" +  plantacao.mostraDataPlantio());
-            }
-        		System.out.println("<-+-+-+-+- Plantações Perenes -+-+-+-> \n");
-            	for (int k  = 0; k < plantacoesPerenes.size(); k++) {
-                	
-                    PlantacaoPerene plantacao = plantacoesPerenes.get(k);
-                    System.out.println("Plantação #" + (k + 1));
-                    System.out.println("Tipo de solo: " + plantacao.getTipoSolo());
-                    System.out.println("Tamanho do terreno: " + plantacao.getTamanhoTerreno() + " metros quadrados");
-                    System.out.println("Tipo de alimento: " + plantacao.getTipoAlimento());
-                    System.out.println("Necessita de poda:" +  plantacao.getPrecisaPoda());
-                }
-        }
+                System.out.println("Data plantio Recente: " +  plantacao.mostraDataPlantio() + "\n");
+            	}
+        	
+        	}
         
-    }
-
-}
+    	}
+	}
 	

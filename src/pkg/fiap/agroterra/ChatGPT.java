@@ -11,7 +11,7 @@ public class ChatGPT {
 
     public  String GPTResponde(String message) {
 	        String url = "https://api.openai.com/v1/chat/completions";
-	        String apiKey = "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";
+	        String apiKey = "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";
 	        String model = "gpt-3.5-turbo";
 	        
 	        try {
