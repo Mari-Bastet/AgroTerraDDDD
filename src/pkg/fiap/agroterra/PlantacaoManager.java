@@ -48,8 +48,6 @@ public class PlantacaoManager {
                     
                 } else {
                 	PlantacaoAnual plantAnual = new PlantacaoAnual(tipoSolo, tamanhoTerreno, tipoAlimento,dataPlantio);
-                	
-                    plantAnual.adicionaPlantacaoAnual(plantAnual);
                     plantacoesAnuais.add(plantAnual);
                     plantacoes.addAll(plantacoesAnuais);
                     System.out.println("Plantação cadastrada com sucesso!\n");
@@ -73,7 +71,6 @@ public class PlantacaoManager {
             System.out.println("Plantação cadastrada com sucesso!\n");
 
         	}
-
     }
 	
 	public void tirarDuvidas(Scanner scanner) {
@@ -132,7 +129,6 @@ public class PlantacaoManager {
                 System.out.println("Dúvida inválida.");
         }
 
-        System.out.println();
     }
 	
 	public void exibirPlantacoesCadastradas() {
@@ -141,21 +137,16 @@ public class PlantacaoManager {
         if (plantacoes.isEmpty()) {
             System.out.println("Nenhuma plantação cadastrada.\n");
         } else {
-        	
-        	PlantacaoAnual plantacaoAnual = new PlantacaoAnual();
-        	plantacaoAnual.mostraPlantacoesAnuais();
-        	
-        	
-        	/*System.out.println("<-+-+-+-+- Plantações Anuais -+-+-+-> \n");
+        		System.out.println("<-+-+-+-+- Plantações Anuais -+-+-+-> \n");
             	for (int j  = 0; j < plantacoesAnuais.size(); j++) {
             	
                 PlantacaoAnual plantacao = plantacoesAnuais.get(j);
-                System.out.println("Plantação #" + (j + 1));
+                System.out.println("Plantação#" + (j + 1));
                 System.out.println("Tipo de solo: " + plantacao.getTipoSolo());
                 System.out.println("Tamanho do terreno: " + plantacao.getTamanhoTerreno() + " metros quadrados");
                 System.out.println("Tipo de alimento: " + plantacao.getTipoAlimento());
                 System.out.println("Data plantio Recente:" +  plantacao.mostraDataPlantio());
-            }*/
+            }
         		System.out.println("<-+-+-+-+- Plantações Perenes -+-+-+-> \n");
             	for (int k  = 0; k < plantacoesPerenes.size(); k++) {
                 	

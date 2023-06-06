@@ -29,12 +29,12 @@ public class Main {
                 case 3:
                     plantacaoManager.exibirPlantacoesCadastradas();
                     break;
-                    
                 case 4:
                 	semente.manejamentoSementes(scanner);
                 	
                 case 0:
                     System.out.println("Saindo do programa...");
+                    scanner.close();
                     break;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
