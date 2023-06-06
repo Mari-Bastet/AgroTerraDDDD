@@ -4,8 +4,14 @@ import java.util.ArrayList;
 
 public class PlantacaoAnual extends Plantacao {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 	String tipoSolo;
+=======
+	private String tipoSolo;
+    private double tamanhoTerreno;
+    private String tipoAlimento;
+>>>>>>> parent of 694d575 (Alterações parte 2)
 =======
 	private String tipoSolo;
     private double tamanhoTerreno;
@@ -23,7 +29,13 @@ public class PlantacaoAnual extends Plantacao {
 		
 		this.dataPlantio = dataPlantio;
 <<<<<<< HEAD
+<<<<<<< HEAD
 		plantAnual = new ArrayList<>();
+=======
+		//Plantacao plantacao = new Plantacao ( tipoSolo,  tamanhoTerreno,  tipoAlimento);
+
+
+>>>>>>> parent of 694d575 (Alterações parte 2)
 =======
 		//Plantacao plantacao = new Plantacao ( tipoSolo,  tamanhoTerreno,  tipoAlimento);
 
