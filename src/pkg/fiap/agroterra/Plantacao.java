@@ -10,6 +10,11 @@ public class Plantacao {
         this.tamanhoTerreno = tamanhoTerreno;
         this.tipoAlimento = tipoAlimento;
     }
+    
+    public Plantacao() {
+    	
+    	
+    }
 
     public String getTipoSolo() {
         return tipoSolo;
