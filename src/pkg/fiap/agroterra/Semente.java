@@ -35,6 +35,8 @@ public class Semente {
 			case 2:
 				calculaEspacamento(scan);
 				break;
+			case 3:
+				praticaArmazenamento(scan);
 		}
 		
 	}
@@ -66,26 +68,39 @@ public class Semente {
 	
 	public void calculaEspacamento(Scanner scan) {
 		
-		System.out.println("Escolha um dos tipos a seguir para que o cálculo seja realizado:\n");
+		ChatGPT gpt = new ChatGPT();
+
+		System.out.println("Escolha um dos lotes a seguir para que o cálculo seja realizado:\n");
 		mostraSementes();
-		
 		int resposta = scan.nextInt()-1;
+		
+		System.out.println("Digite o espaço utilizado para o plantio (em metros quadrados): ");
+		double espacoPlantio = scan.nextDouble(); 
 		
 		Semente semente = sementes.get(resposta);
 		String pergunta = "Calcule o espaçamento ideal para " + semente.qtdSemente + " sementes de " + semente.tipoSemente +
-						  " em um espaço de 3 metros quadrados";
+						  " em um espaço de " + espacoPlantio + " metros quadrados";
 		
-			System.out.println(pergunta);	
-		//ChatGPT.GPTResponde(pergunta);
+		String respostaGpt = gpt.GPTResponde(pergunta);
+		System.out.println(respostaGpt);
+	}
+	
+	private void praticaArmazenamento(Scanner scan) {
+		ChatGPT gpt = new ChatGPT();
+
+		System.out.println("Escolha um dos lotes a seguir para que sejam indicadas práticas corretas de armazenamento:\n");
+		mostraSementes();
+
+		int resposta = scan.nextInt()-1;
 		
+		Semente semente = sementes.get(resposta);
+		String pergunta = "Me dê, em tópicos, as melhores práticas para armazenar sementes de" + semente.tipoSemente;
+		
+		String respostaGpt = gpt.GPTResponde(pergunta);
+		System.out.println(respostaGpt);
 		
 		
 	}
-	
-	
-	
-	
-	
-	
+
 	
 }

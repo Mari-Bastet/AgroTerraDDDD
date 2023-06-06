@@ -35,6 +35,7 @@ public class Main {
                 	
                 case 0:
                     System.out.println("Saindo do programa...");
+                    scanner.close();
                     break;
                 default:
                     System.out.println("Opção inválida! Tente novamente.");
@@ -45,8 +46,9 @@ public class Main {
     public static void exibirMenu() {
         System.out.println("===== MENU =====");
         System.out.println("1 - Cadastrar plantação");
-        System.out.println("2 - Tirar dúvidas");
-        System.out.println("3 - Ver plantações cadastradas");
+        System.out.println("2 - Tirar Dúvidas");
+        System.out.println("3 - Ver Plantações Cadastradas");
+        System.out.println("4 - Manejamento de Sementes");
         System.out.println("0 - Sair");
         System.out.print("Escolha uma opção: ");
 
