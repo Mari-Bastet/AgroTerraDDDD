@@ -1,12 +1,14 @@
-package pkg.fiap.agroterra;
+package main;
 import java.util.Scanner;
 
-public class main {
+import pkg.fiap.agroterra.PlantacaoManager;
+import pkg.fiap.agroterra.Semente;
+
+public class Main {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
       
-	//	ChatGPT gpt = new ChatGPT();
 		PlantacaoManager plantacaoManager = new PlantacaoManager();
 		Semente semente = new Semente();
 

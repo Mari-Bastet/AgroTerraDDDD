@@ -79,6 +79,7 @@ public class PlantacaoManager {
         System.out.println("Sobre qual plantação você deseja tirar dúvidas?");
 
         String pergunta; 
+        String respostaGpt;
         
         if (plantacoes.isEmpty()) {
             System.out.println("Nenhuma plantação cadastrada.\n");
@@ -97,7 +98,8 @@ public class PlantacaoManager {
         }
         
         Plantacao plantacaoSelecionada = plantacoes.get(numeroPlantacao - 1);
-
+        ChatGPT gpt = new ChatGPT();
+        
         System.out.println("Dúvidas sobre a plantação " + numeroPlantacao + ":");
         System.out.println("1. Como identificar pragas?");
         System.out.println("2. Sobre como cultivar?");
@@ -109,16 +111,20 @@ public class PlantacaoManager {
         switch (numeroDuvida) {
             case 1:
             	pergunta = plantacaoSelecionada.identificarPragas();
-            	ChatGPT.GPTResponde(pergunta);
+            	respostaGpt = gpt.GPTResponde(pergunta);
+            	System.out.println(respostaGpt);
             	
                 break;
             case 2:
                 pergunta = plantacaoSelecionada.cultivarMelhorForma();
-                ChatGPT.GPTResponde(pergunta);
+            	respostaGpt = gpt.GPTResponde(pergunta);
+            	System.out.println(respostaGpt);
                 break;
             case 3:
                 pergunta = plantacaoSelecionada.melhorEpocaColheita();
-                ChatGPT.GPTResponde(pergunta);
+            	respostaGpt = gpt.GPTResponde(pergunta);
+            	System.out.println(respostaGpt);
+
                 break; 	
             default:
                 System.out.println("Dúvida inválida.");
@@ -153,22 +159,8 @@ public class PlantacaoManager {
                     System.out.println("Tipo de alimento: " + plantacao.getTipoAlimento());
                     System.out.println("Necessita de poda:" +  plantacao.getPrecisaPoda());
                 }
-         // }
         }
         
-       /* System.out.println("===== PLANTAÇÕES CADASTRADAS =====");
-        if (plantacoes.isEmpty()) {
-            System.out.println("Nenhuma plantação cadastrada.\n");
-        } else {
-            for (int i = 0; i < plantacoes.size(); i++) {
-                Plantacao plantacao = plantacoes.get(i);
-                System.out.println("Plantação " + (i + 1) + ":");
-                System.out.println("Tipo de solo: " + plantacao.getTipoSolo());
-                System.out.println("Tamanho do terreno: " + plantacao.getTamanhoTerreno() + " metros quadrados");
-                System.out.println("Tipo de alimento: " + plantacao.getTipoAlimento());
-                System.out.println();
-            }
-        }*/
     }
 
 }
