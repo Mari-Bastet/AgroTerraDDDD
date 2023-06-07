@@ -1,8 +1,8 @@
 package main;
 import java.util.Scanner;
 
-import pkg.fiap.agroterra.PlantacaoManager;
-import pkg.fiap.agroterra.Semente;
+import beans.PlantacaoManager;
+import beans.Semente;
 
 public class Main {
 
@@ -11,7 +11,7 @@ public class Main {
       
 		PlantacaoManager plantacaoManager = new PlantacaoManager();
 		Semente semente = new Semente();
-
+		
         int opcao;
 
         do {

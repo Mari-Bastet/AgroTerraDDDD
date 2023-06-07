@@ -1,8 +1,8 @@
-package pkg.fiap.agroterra;
+package beans;
 
 public class PlantacaoPerene extends Plantacao {
 	
-	String precisaPoda;
+	private String precisaPoda;
 	
 	public PlantacaoPerene(String tipoSolo, double tamanhoTerreno, String tipoAlimento,String precisaPoda) {
 		super(tipoSolo, tamanhoTerreno, tipoAlimento);
@@ -13,5 +13,5 @@ public class PlantacaoPerene extends Plantacao {
 		return precisaPoda;
 		
 	}
-
+	
 }

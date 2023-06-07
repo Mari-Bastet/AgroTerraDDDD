@@ -1,4 +1,4 @@
-package pkg.fiap.agroterra;
+package beans;
 
 public class Plantacao {
     private String tipoSolo;
@@ -24,19 +24,19 @@ public class Plantacao {
         return tipoAlimento;
     }
 
-    public String identificarPragas() {
+    public String perguntaIdentificacaoPragas() {
         return "Possuo uma plantação de " + tipoAlimento +
                 " com terreno de " + tamanhoTerreno + " metros quadrados e solo " +
                 tipoSolo + ", quais são as possíveis pragas?";
     }
 
-    public String cultivarMelhorForma() {
+    public String perguntaCultivarMelhorForma() {
         return "Possuo uma plantação de " + tipoAlimento +
                 ", com terreno de " + tamanhoTerreno + " metros quadrados e solo " +
                 tipoSolo + ", como cultivar de uma melhor forma?";
     }
 
-    public String melhorEpocaColheita() {
+    public String perguntaMelhorEpocaColheita() {
         return "Possuo um terreno " + tipoSolo +
                 ", planto " + tipoAlimento + " e tenho " + tamanhoTerreno +
                 " metros, é a melhor época para colheita?";

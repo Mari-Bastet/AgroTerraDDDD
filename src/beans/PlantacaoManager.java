@@ -1,4 +1,4 @@
-package pkg.fiap.agroterra;
+package beans;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.time.format.DateTimeFormatter;
@@ -120,18 +120,18 @@ public class PlantacaoManager {
 
         switch (numeroDuvida) {
             case 1:
-            	pergunta = plantacaoSelecionada.identificarPragas();
+            	pergunta = plantacaoSelecionada.perguntaIdentificacaoPragas();
             	respostaGpt = gpt.GPTResponde(pergunta);
             	System.out.println(respostaGpt);
             	
                 break;
             case 2:
-                pergunta = plantacaoSelecionada.cultivarMelhorForma();
+                pergunta = plantacaoSelecionada.perguntaCultivarMelhorForma();
             	respostaGpt = gpt.GPTResponde(pergunta);
             	System.out.println(respostaGpt);
                 break;
             case 3:
-                pergunta = plantacaoSelecionada.melhorEpocaColheita();
+                pergunta = plantacaoSelecionada.perguntaMelhorEpocaColheita();
             	respostaGpt = gpt.GPTResponde(pergunta);
             	System.out.println(respostaGpt);
 
@@ -157,7 +157,7 @@ public class PlantacaoManager {
                 System.out.println("Tipo de solo: " + plantacao.getTipoSolo());
                 System.out.println("Tamanho do terreno: " + plantacao.getTamanhoTerreno() + " metros quadrados");
                 System.out.println("Tipo de alimento: " + plantacao.getTipoAlimento());
-                System.out.println("Necessita de poda:" +  plantacao.getPrecisaPoda());
+                System.out.println("Necessita de poda:" +  plantacao.getPrecisaPoda() + "\n");
         		}
         	}
 		}
