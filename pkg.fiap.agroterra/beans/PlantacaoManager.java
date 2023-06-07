@@ -82,11 +82,6 @@ public class PlantacaoManager {
         String pergunta; 
         String respostaGpt;
         
-       /* if (plantacoes.isEmpty()) {
-            System.out.println("Nenhuma plantação cadastrada.\n");
-            return;
-        }*/
-        
         if (tipoPlantacao == 1) {
         	exibirPlantacoesAnuais();
         }

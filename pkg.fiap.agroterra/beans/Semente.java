@@ -5,9 +5,9 @@ import java.util.Scanner;
 
 public class Semente {
 	
-	ArrayList<Semente> sementes;
-	String tipoSemente;
-	double qtdSemente;
+	private ArrayList<Semente> sementes;
+	private String tipoSemente;
+	private double qtdSemente;
 	
 	
 	public Semente() {
@@ -44,9 +44,9 @@ public class Semente {
 	
 	public void cadastraSemente(Scanner scan) {
 		
-		System.out.println("De qual alimento a semente que será armazenada? ");
+		System.out.println("A semente de qual alimento que será armazenada? ");
 		String tipoSemente = scan.next();
-		System.out.println("Digite a quantidade de sementes (unidade) ");
+		System.out.println("Digite a quantidade de sementes (unidade): ");
 		int qtdSemente = scan.nextInt();
 		scan.nextLine();
 		
